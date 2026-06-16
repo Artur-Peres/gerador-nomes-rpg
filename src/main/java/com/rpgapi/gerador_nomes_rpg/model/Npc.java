@@ -5,9 +5,13 @@ import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 
 @Entity
+@Getter
 public class Npc {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,31 +31,14 @@ public class Npc {
     @Enumerated(EnumType.STRING)
     private Personality personality;
 
+    public Npc() {
+    }
+
     public Npc(String name, Race race, RpgClass rpgClass, Occupation occupation, Personality personality) {
         this.name = name;
         this.race = race;
         this.rpgClass = rpgClass;
         this.occupation = occupation;
         this.personality = personality;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Race getRace() {
-        return race;
-    }
-
-    public RpgClass getRpgClass() {
-        return rpgClass;
-    }
-
-    public Occupation getOccupation() {
-        return occupation;
-    }
-
-    public Personality getPersonality() {
-        return personality;
     }
 }

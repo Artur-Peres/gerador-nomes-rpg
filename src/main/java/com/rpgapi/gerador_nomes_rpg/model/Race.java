@@ -5,7 +5,7 @@ public enum Race {
     HUMAN,
     DWARF,
     ORC,
-    HAlFLING,
+    HALFLING,
     GNOME,
     GOBLIN,
     TIEFLING

@@ -6,9 +6,11 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 
 @Entity
+@Table(name = "name_parts")
 public class NamePart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,5 +22,9 @@ public class NamePart {
     private Race race;
 
     @Enumerated(EnumType.STRING)
-    private NamePart type;
+    private NameType type;
+
+    public String getValue() {
+        return value;
+    }
 }
