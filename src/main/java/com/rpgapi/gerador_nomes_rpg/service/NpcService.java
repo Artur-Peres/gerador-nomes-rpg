@@ -20,10 +20,7 @@ public class NpcService {
 
     private final Random random = new Random();
 
-    public NpcService(
-            NpcRepository npcRepository,
-            NameGeneratorService nameGeneratorService
-    ) {
+    public NpcService(NpcRepository npcRepository, NameGeneratorService nameGeneratorService) {
         this.npcRepository = npcRepository;
         this.nameGeneratorService = nameGeneratorService;
     }
