@@ -21,19 +21,16 @@ public class AuthController {
 
     @PostMapping("/register")
     public ResponseEntity<AuthResponseDTO> registerUser(@RequestBody RegisterRequestDTO request){
-        AuthResponseDTO response =
-                authService.register(request);
+        AuthResponseDTO response = authService.register(request);
 
         return ResponseEntity
                 .status(HttpStatus.CREATED)
                 .body(response);
-
     }
 
     @PostMapping("/login")
     public ResponseEntity<AuthResponseDTO> loginUser(@RequestBody LoginRequestDTO request){
-        AuthResponseDTO response =
-                authService.login(request);
+        AuthResponseDTO response = authService.login(request);
 
         return ResponseEntity.ok(response);
     }
